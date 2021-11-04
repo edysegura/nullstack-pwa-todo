@@ -1,4 +1,4 @@
-import Nullstack from 'nullstack';
-import Application from './src/Application';
+import Nullstack from 'nullstack'
+import Application from './src/Application'
 
-export default Nullstack.start(Application);
+export default Nullstack.start(Application)

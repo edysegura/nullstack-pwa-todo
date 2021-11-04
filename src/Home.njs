@@ -1,16 +1,15 @@
-import Nullstack from 'nullstack';
-import './Home.scss';
-import Logo from 'nullstack/logo';
+import Nullstack from 'nullstack'
+import './Home.scss'
+import Logo from 'nullstack/logo'
 
 class Home extends Nullstack {
-
   prepare({ project, page }) {
-    page.title = `${project.name} - Welcome to Nullstack!`;
-    page.description = `${project.name} was made with Nullstack`;
+    page.title = `${project.name} - Welcome to Nullstack!`
+    page.description = `${project.name} was made with Nullstack`
   }
 
   renderLink({ children, href }) {
-    const link = href + '?ref=create-nullstack-app';
+    const link = href + '?ref=create-nullstack-app'
     return (
       <a href={link} target="_blank" rel="noopener noreferrer">
         {children}
@@ -27,10 +26,12 @@ class Home extends Nullstack {
           </Link>
           <h1> {project.name} </h1>
           <p>
-            We made some examples to help you getting started! Take a look at the
+            We made some examples to help you getting started! Take a look at
+            the
             <Link href="vscode://file//home/edysegura/workspace/nullstack-pwa-todo/src">
               src folder
-            </Link>.
+            </Link>
+            .
           </p>
           <span>
             Hint: we have a
@@ -41,7 +42,7 @@ class Home extends Nullstack {
           <ul>
             <li>
               <Link href="https://nullstack.app/renderable-components">
-                🎉 Create your first component 
+                🎉 Create your first component
               </Link>
             </li>
             <li>
@@ -66,23 +67,21 @@ class Home extends Nullstack {
             </li>
           </ul>
           <div>
-            <span>
-              As da Vinci would say:
-            </span>
-            <blockquote>
-              "Simplicity is the ultimate sophistication"
-            </blockquote>
+            <span>As da Vinci would say:</span>
+            <blockquote>"Simplicity is the ultimate sophistication"</blockquote>
           </div>
         </article>
         <aside>
           <Link href="https://nullstack.app/waifu">
-            <img src="/nulla-chan.webp" alt="Nulla-Chan: Nullstack's official waifu" />
+            <img
+              src="/nulla-chan.webp"
+              alt="Nulla-Chan: Nullstack's official waifu"
+            />
           </Link>
         </aside>
       </section>
     )
   }
-
 }
 
-export default Home;
+export default Home
