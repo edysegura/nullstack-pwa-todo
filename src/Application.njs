@@ -22,6 +22,10 @@ class Application extends Nullstack {
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.indigo-pink.min.css"
         />
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.min.js"
+          async
+        ></script>
       </head>
     )
   }
