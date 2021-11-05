@@ -1,6 +1,5 @@
 import Nullstack from 'nullstack'
 import './Home.scss'
-import Logo from 'nullstack/logo'
 
 class Home extends Nullstack {
   prepare({ project, page }) {
@@ -8,78 +7,41 @@ class Home extends Nullstack {
     page.description = `${project.name} was made with Nullstack`
   }
 
-  renderLink({ children, href }) {
-    const link = href + '?ref=create-nullstack-app'
-    return (
-      <a href={link} target="_blank" rel="noopener noreferrer">
-        {children}
-      </a>
-    )
-  }
-
   render({ project }) {
     return (
-      <section>
-        <article>
-          <Link href="https://nullstack.app/">
-            <Logo height={60} light />
-          </Link>
-          <h1> {project.name} </h1>
-          <p>
-            We made some examples to help you getting started! Take a look at
-            the
-            <Link href="vscode://file//home/edysegura/workspace/nullstack-pwa-todo/src">
-              src folder
-            </Link>
-            .
-          </p>
-          <span>
-            Hint: we have a
-            <Link href="vscode:extension/ChristianMortaro.vscode-nullstack">
-              VS Code Extension
-            </Link>
-          </span>
-          <ul>
-            <li>
-              <Link href="https://nullstack.app/renderable-components">
-                🎉 Create your first component
-              </Link>
-            </li>
-            <li>
-              <Link href="https://nullstack.app/routes-and-params">
-                ✨ Set your first route
-              </Link>
-            </li>
-            <li>
-              <Link href="https://nullstack.app/context">
-                ⚡ Define your context
-              </Link>
-            </li>
-            <li>
-              <Link href="https://github.com/nullstack/nullstack/stargazers">
-                ⭐ Leave a star on github
-              </Link>
-            </li>
-            <li>
-              <Link href="https://youtube.com/nullstack">
-                🎬 Subscribe to our Youtube Channel
-              </Link>
-            </li>
-          </ul>
-          <div>
-            <span>As da Vinci would say:</span>
-            <blockquote>"Simplicity is the ultimate sophistication"</blockquote>
+      <div id="app">
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+          <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+              <span class="mdl-layout-title">PWA - Todo List</span>
+            </div>
+          </header>
+          <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">PWA - Todo List</span>
+            <nav class="mdl-navigation">
+              <a class="mdl-navigation__link" href="/">
+                About
+              </a>
+            </nav>
           </div>
-        </article>
-        <aside>
-          <Link href="https://nullstack.app/waifu">
-            <img
-              src="/nulla-chan.webp"
-              alt="Nulla-Chan: Nullstack's official waifu"
-            />
-          </Link>
-        </aside>
-      </section>
+          <main
+            class="mdl-layout__content mat-typography"
+            style="text-align: center"
+          >
+            <form>
+              <input
+                type="text"
+                name="item"
+                placeholder="Type something"
+                autofocus=""
+                required=""
+                autocomplete="off"
+              />
+            </form>
+            <ul></ul>
+          </main>
+        </div>
+      </div>
     )
   }
 }

@@ -10,10 +10,17 @@ class Application extends Nullstack {
   renderHead() {
     return (
       <head>
-        <link href="https://fonts.gstatic.com" rel="preconnect" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Crete+Round&family=Roboto&display=swap"
           rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:400,700"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.indigo-pink.min.css"
         />
       </head>
     )

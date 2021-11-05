@@ -1,18 +1,43 @@
 * {
-  padding: 0;
-  margin: 0;
-  text-decoration: none;
-  list-style: none;
   box-sizing: border-box;
 }
 
-body {
-  background-color: #2d3748;
-  color: #fff;
-  font-family: 'Roboto', sans-serif;
+form {
+  padding: 20px;
+  border-bottom: solid 1px #ddd;
 }
 
-a {
-  color: #ddbc72;
-  margin-left: 0.3em;
+input {
+  width: 99%;
+  padding: 0.5em;
+  font-size: 1.4em;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  padding: 20px;
+  border-bottom: solid 1px #ddd;
+  cursor: pointer;
+  display: flex;
+}
+
+li > span {
+  flex: 1;
+  text-align: left;
+}
+
+li > button {
+  background: none;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+.done > span {
+  text-decoration: line-through;
 }
