@@ -7,7 +7,7 @@ class Home extends Nullstack {
     page.description = `${project.name} was made with Nullstack`
   }
 
-  render({ project }) {
+  render() {
     return (
       <div id="app">
         <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
