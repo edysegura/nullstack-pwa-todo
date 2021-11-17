@@ -10,5 +10,8 @@
   "scripts": {
     "start": "npx nullstack start",
     "build": "npx nullstack build --mode=ssg --output=dist"
+  },
+  "dependencies": {
+    "dexie": "^3.0.3"
   }
 }
