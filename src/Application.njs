@@ -1,10 +1,17 @@
 import Nullstack from 'nullstack'
 import './Application.scss'
 import Home from './Home'
+import TodoService from './TodoService'
 
 class Application extends Nullstack {
+  db
+
   prepare({ page }) {
     page.locale = 'en-US'
+  }
+
+  async hydrate() {
+    this.db = new TodoService()
   }
 
   renderStyle({ href }) {
