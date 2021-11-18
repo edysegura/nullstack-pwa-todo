@@ -3,8 +3,8 @@ import './Home.scss'
 
 class Home extends Nullstack {
   prepare({ project, page }) {
-    page.title = `${project.name} - Welcome to Nullstack!`
-    page.description = `${project.name} was made with Nullstack`
+    page.title = `${project.name}`
+    page.description = `${project.name} was made with 💖 and Nullstack`
   }
 
   render() {
