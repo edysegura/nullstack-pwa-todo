@@ -2,6 +2,8 @@ import Nullstack from 'nullstack'
 import './Home.scss'
 
 class Home extends Nullstack {
+  tasks = ['Task 1', 'Task 2']
+
   prepare({ project, page }) {
     page.title = `${project.name}`
     page.description = `${project.name} was made with 💖 and Nullstack`
@@ -30,23 +32,32 @@ class Home extends Nullstack {
     )
   }
 
+  addTask({ event }) {
+    const form = event.target
+    this.tasks.push(form.item.value)
+    form.item.value = ''
+  }
+
   renderMain() {
     return (
       <main
         class="mdl-layout__content mat-typography"
         style="text-align: center"
       >
-        <form>
+        <form onsubmit={this.addTask}>
           <input
             type="text"
             name="item"
             placeholder="Type something"
-            autofocus=""
-            required=""
+            required
             autocomplete="off"
           />
         </form>
-        <ul></ul>
+        <ul>
+          {this.tasks.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
       </main>
     )
   }
