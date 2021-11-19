@@ -25,7 +25,7 @@ class Home extends Nullstack {
         <span class="mdl-layout-title">{project.shortName}</span>
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link" href="https://nullstack.app/">
-            About
+            Nullstack documentation
           </a>
         </nav>
       </div>
