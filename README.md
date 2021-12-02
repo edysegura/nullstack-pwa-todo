@@ -11,7 +11,7 @@ Install the dependencies:
 Copy the environment sample to a .env file
 
 ```sh
-NULLSTACK_PROJECT_NAME="[dev] Nullstack Pwa Todo"
+NULLSTACK_PROJECT_NAME="[dev] PWA Todo | Nullstack"
 NULLSTACK_PROJECT_DOMAIN="localhost"
 NULLSTACK_PROJECT_COLOR="#D22365"
 NULLSTACK_SERVER_PORT="5000"
