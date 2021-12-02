@@ -4,14 +4,9 @@ import Home from './Home'
 import TodoService from './TodoService'
 
 class Application extends Nullstack {
-  db
-
-  prepare({ page }) {
-    page.locale = 'en-US'
-  }
-
-  async hydrate() {
-    this.db = new TodoService()
+  async hydrate(context) {
+    const database = new TodoService()
+    context.tasks = await database.getAll()
   }
 
   renderStyle({ href }) {
