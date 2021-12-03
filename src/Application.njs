@@ -1,7 +1,8 @@
 import Nullstack from 'nullstack'
-import './Application.scss'
-import Home from './Home'
 import TodoService from './TodoService'
+import Todo from './Todo'
+
+import './Application.scss'
 
 class Application extends Nullstack {
   async hydrate(context) {
@@ -31,7 +32,7 @@ class Application extends Nullstack {
     return (
       <main>
         <Head />
-        <Home route="/" />
+        <Todo route="/" />
       </main>
     )
   }

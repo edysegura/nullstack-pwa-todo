@@ -1,5 +1,4 @@
 import Nullstack from 'nullstack'
-import './Home.scss'
 
 class Home extends Nullstack {
   tasks = ['Task 1', 'Task 2']
