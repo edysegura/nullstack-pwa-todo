@@ -1,17 +1,34 @@
 import Nullstack from 'nullstack'
-import TodoService from './TodoService'
+import Dexie from 'dexie'
 import Todo from './Todo'
 
 import './Application.scss'
 
 class Application extends Nullstack {
-  async hydrate(context) {
-    const database = new TodoService()
-    context.tasks = await database.getAll()
-  }
-
   renderStyle({ href }) {
     return <link rel="stylesheet" href={href} />
+  }
+
+  hydrate(context) {
+    const db = new Dexie('todoDB')
+
+    db.version(1).stores({
+      tasks: '++id,description',
+    })
+
+    db.on('populate', async () => {
+      await db.tasks.bulkPut([
+        { description: 'Learn HTML', done: true },
+        { description: 'Learn CSS', done: true },
+        { description: 'Learn JavaScript', done: true },
+        { description: '💙 Learn Nullstack', done: false },
+        { description: 'Learn PWA', done: false },
+        { description: 'Learn HTML5 APIs', done: false },
+      ])
+    })
+
+    db.open()
+    context._db = db
   }
 
   renderHead() {
