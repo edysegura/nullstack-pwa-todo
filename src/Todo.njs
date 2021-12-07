@@ -1,11 +1,15 @@
 import Nullstack from 'nullstack'
 
 class Home extends Nullstack {
-  tasks = ['Task 1', 'Task 2']
+  tasks = []
 
-  prepare({ project, page }) {
+  async prepare({ project, page, _db }) {
     page.title = `${project.name}`
     page.description = `${project.name} was made with 💖 and Nullstack`
+  }
+
+  async hydrate({ _db }) {
+    this.tasks = await _db.tasks.toArray()
   }
 
   renderHeader({ page }) {
@@ -15,19 +19,6 @@ class Home extends Nullstack {
           <span class="mdl-layout-title">{page.title}</span>
         </div>
       </header>
-    )
-  }
-
-  renderDrawer({ project }) {
-    return (
-      <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">{project.shortName}</span>
-        <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="https://nullstack.app/">
-            Nullstack documentation
-          </a>
-        </nav>
-      </div>
     )
   }
 
@@ -53,8 +44,8 @@ class Home extends Nullstack {
           />
         </form>
         <ul>
-          {this.tasks.map((item) => (
-            <li>{item}</li>
+          {this.tasks.map((task) => (
+            <li>{task.description}</li>
           ))}
         </ul>
       </main>
@@ -66,7 +57,6 @@ class Home extends Nullstack {
       <div id="app">
         <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
           <Header />
-          <Drawer />
           <Main />
         </div>
       </div>
