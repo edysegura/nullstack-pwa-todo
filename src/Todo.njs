@@ -47,7 +47,10 @@ class Home extends Nullstack {
         </form>
         <ul>
           {this.tasks.map((task) => (
-            <li>{task.description}</li>
+            <li>
+              <span>{task.description}</span>
+              <button>x</button>
+            </li>
           ))}
         </ul>
       </main>
