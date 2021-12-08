@@ -22,9 +22,11 @@ class Home extends Nullstack {
     )
   }
 
-  addTask({ event }) {
+  async addTask({ _db, event }) {
     const form = event.target
-    this.tasks.push(form.item.value)
+    const newTask = { description: form.item.value, done: false }
+    await _db.tasks.put(newTask)
+    this.tasks.push(newTask)
     form.item.value = ''
   }
 
