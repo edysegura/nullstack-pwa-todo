@@ -5,8 +5,8 @@ import Todo from './Todo'
 import './Application.scss'
 
 class Application extends Nullstack {
-  renderStyle({ href }) {
-    return <link rel="stylesheet" href={href} />
+  prepare({ project, page }) {
+    page.title = project.name
   }
 
   hydrate(context) {
@@ -29,6 +29,10 @@ class Application extends Nullstack {
 
     db.open()
     context._db = db
+  }
+
+  renderStyle({ href }) {
+    return <link rel="stylesheet" href={href} />
   }
 
   renderHead() {

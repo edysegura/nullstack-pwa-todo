@@ -3,11 +3,6 @@ import Nullstack from 'nullstack'
 class Home extends Nullstack {
   tasks = []
 
-  async prepare({ project, page }) {
-    page.title = `${project.name}`
-    page.description = `${project.name} was made with 💖 and Nullstack`
-  }
-
   async hydrate({ _db }) {
     this.tasks = await _db.tasks.toArray()
   }
