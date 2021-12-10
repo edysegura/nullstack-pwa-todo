@@ -31,8 +31,8 @@ class Home extends Nullstack {
   }
 
   async deleteTask({ _db, data }) {
-    if (confirm('Delete this task?')) {
-      await _db.tasks.delete(data.taskId)
+    if (confirm(`Delete this task? ${data.task.description}`)) {
+      await _db.tasks.delete(data.task.id)
       this.tasks = await _db.tasks.toArray()
     }
   }
@@ -56,7 +56,7 @@ class Home extends Nullstack {
           {this.tasks.map((task) => (
             <li>
               <span>{task.description}</span>
-              <button data-task-id={task.id} onclick={this.deleteTask}>
+              <button data-task={task} onclick={this.deleteTask}>
                 x
               </button>
             </li>
