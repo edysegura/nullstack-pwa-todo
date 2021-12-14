@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import Nullstack from 'nullstack'
 
 class Home extends Nullstack {
@@ -32,6 +33,13 @@ class Home extends Nullstack {
     }
   }
 
+  async toggleTask({ _db, data }) {
+    data.task.done = !data.task.done
+    const task = await _db.tasks.get(data.task.id)
+    task.done = data.task.done
+    await _db.tasks.put(task)
+  }
+
   renderMain() {
     return (
       <main
@@ -49,7 +57,12 @@ class Home extends Nullstack {
         </form>
         <ul>
           {this.tasks.map((task) => (
-            <li>
+            console.log({ task }),
+            <li
+              data-task={task}
+              onclick={this.toggleTask}
+              class={classNames({ done: task.done })}
+            >
               <span>{task.description}</span>
               <button data-task={task} onclick={this.deleteTask}>
                 x
