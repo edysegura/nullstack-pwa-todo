@@ -12,6 +12,7 @@
     "build": "npx nullstack build --mode=ssg --output=dist"
   },
   "dependencies": {
+    "classnames": "^2.3.1",
     "dexie": "^3.0.3"
   }
 }
