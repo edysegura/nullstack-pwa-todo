@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "nullstack": "~0.11.0"
   },
