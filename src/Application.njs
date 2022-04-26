@@ -1,5 +1,4 @@
 import Nullstack from 'nullstack'
-import Dexie from 'dexie'
 import Todo from './Todo'
 
 import './Application.scss'
@@ -7,28 +6,6 @@ import './Application.scss'
 class Application extends Nullstack {
   prepare({ project, page }) {
     page.title = project.name
-  }
-
-  hydrate(context) {
-    const db = new Dexie('todoDB')
-
-    db.version(1).stores({
-      tasks: '++id,description',
-    })
-
-    db.on('populate', async () => {
-      await db.tasks.bulkPut([
-        { description: 'Learn HTML', done: true },
-        { description: 'Learn CSS', done: true },
-        { description: 'Learn JavaScript', done: true },
-        { description: '💙 Learn Nullstack', done: false },
-        { description: 'Learn PWA', done: false },
-        { description: 'Learn HTML5 APIs', done: false },
-      ])
-    })
-
-    db.open()
-    context._db = db
   }
 
   renderStyle({ href }) {
