@@ -1,8 +1,6 @@
 {
   "name": "nullstack-pwa-todo",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
   "license": "MIT",
   "devDependencies": {
     "nullstack": "~0.15.8"
